@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
-  "private": true,
+  "name": "photo-website",
+  "private": false,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "A webiste to allow visitors to upload and download photos",
+  "repository": "https://github.com/pmaidens/photo-website",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
