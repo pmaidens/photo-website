@@ -1,0 +1,26 @@
+.imageWrapper {
+    display: inline-block;
+}
+
+.view1 .largeImageContainer {
+    text-align: center;
+}
+
+.view1 .largeImageContainer img.large{
+    height: 600px;
+}
+.view1 .largeImageContainer .imageWrapper span.hoverText{
+    position: relative;
+    top: 30px;
+    left: 0;
+    visibility: hidden;
+}
+.view1 .largeImageContainer .imageWrapper:hover span.hoverText{
+    visibility: visible;
+}
+
+.view1 .fullResImageContainer img {
+    position:absolute;
+    top: 0;
+    left: 0;
+}
