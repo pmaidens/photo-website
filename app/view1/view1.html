@@ -3,14 +3,13 @@
     <div class="largeImageContainer">
         <div class="imageWrapper">
             <img class="large" ng-src="{{v1controller.server + v1controller.image}}" ng-click="v1controller.showFullRes()">
-            <span class="hoverText">Click to Zoom</span>
         </div>
         <h3>{{v1controller.imageProperties.title}}</h3>
         <h6>{{v1controller.imageProperties.caption}}</h6>
     </div>
-    <span class="fullResImageContainer" ng-hide="!v1controller.fullResVisible">
+    <span class="fullResImageContainer" ng-hide="!v1controller.fullResVisible" ng-click="v1controller.hideFullRes()">
         <div class="imageWrapper">
-            <img ng-src="{{v1controller.server + v1controller.image}}" ng-click="v1controller.hideFullRes()">
+            <img ng-src="{{v1controller.server + v1controller.image}}">
         </div>
     </span>
 </div>
