@@ -10,5 +10,12 @@ angular.module('myApp.view2', ['ngRoute'])
 }])
 
 .controller('View2Ctrl', [function() {
+    this.submitPicture = function submitPicture(pictureFile) {
+        console.log(this.pictureFile);
 
+    }
+
+    this.generateThumb = function generateThumb(picture, files) {
+        console.log(picture);
+    }
 }]);

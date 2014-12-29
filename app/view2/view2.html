@@ -1,5 +1,31 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-controller="View2Ctrl as v2controller">
+    <form name="uploadPictureForm">
+        <fieldset>
+            <legend>Upload your own picture</legend>
+            <div>
+                <label>Choose a picture: </label>
+                <input type="file" ng-file-select="" ng-model="uploadedPictures" name="uploadedPictures" accept="image/*" ng-file-change="generateThumb(uploadedPictures[0], $files)" required="false">
+                <img ng-show="uploadedPictures[0].dataUrl != null" ng-src="{{uploadedPictures[0].dataUrl}}" class="thumb">
+            </div>
+            <div>
+                <label>Title: </label>
+                <input type="text" name="title" ng-model="pictureTitle" size="48" required="false" />
+            </div>
+            <div>
+                <label>Caption: </label>
+                <input type="text" name="caption" ng-model="pictureCaption" size="48" required="false" />
+            </div>
+            <div>
+                <label>Credits: </label>
+                <input type="text" name="credits" ng-model="pictureCredits" size="48" required="false" />
+            </div>
+            <button type="button" ng-click="v2controller.submitPicture(uploadedPictures)">Submit</button>
+        </fieldset>
+    </form>
+</div>
+
+<!--
+http://ngmodules.org/modules/angular-file-upload
+https://github.com/danialfarid/angular-file-upload
+https://angular-file-upload.appspot.com/
+-->
