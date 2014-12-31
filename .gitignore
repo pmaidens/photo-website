@@ -2,3 +2,5 @@ app/npm-debug.log
 node_modules/
 bower_components/
 app/Pictures/
+.sass-cache/
+app/style/css/
