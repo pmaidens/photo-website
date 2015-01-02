@@ -4,7 +4,7 @@
         <div>{{companyName}}</div>
     </div>
     <div class="body">
-        <a ng-repeat="picture in uploadedPictures" href="#/photos/{{picture.id}}">
+        <a ng-repeat="picture in uploadedPictures" ng-href="#/photos/{{picture.id}}">
             <div class="pictureTitle">{{picture.title}}</div>
             <img class="homePagePicture" ng-src="{{picture.dataURL}}">
         </a>

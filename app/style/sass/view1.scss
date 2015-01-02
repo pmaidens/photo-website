@@ -1,0 +1,27 @@
+.view1 {
+    .largeImageContainer {
+        text-align: center;
+        .imageWrapper {
+            img.large {
+                height: 600px;
+            }
+        }
+    }
+    .fullResImageContainer {
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        display: table;
+        .imageWrapper {
+            vertical-align: middle;
+            display: table-cell;
+        }
+    }
+    .imageWrapper {
+        display: block;
+    }
+}
