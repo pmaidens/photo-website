@@ -1,12 +1,15 @@
+<link rel="stylesheet" href="style/css/homeStyle.css">
 <div class="homePage" ng-controller="HomeViewController">
     <div class="stage">
         <div>{{welcomeMessage}}</div>
         <div>{{companyName}}</div>
     </div>
     <div class="body">
-        <a ng-repeat="picture in uploadedPictures" ng-href="#/photos/{{picture.id}}">
-            <div class="pictureTitle">{{picture.title}}</div>
-            <img class="homePagePicture" ng-src="{{picture.dataURL}}">
+        <a class="pictureContainerLink" ng-repeat="picture in uploadedPictures" ng-href="#/photos/{{picture.id}}">
+            <div class="pictureContainer">
+                <img class="homePagePicture" ng-src="{{picture.dataURL}}">
+                <h2><span class="pictureTitle">{{picture.title}}</span></h2>
+            </div>
         </a>
     </div>
 </div>
