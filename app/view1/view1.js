@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.photos', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
+  $routeProvider.when('/photos/:id', {
     templateUrl: 'view1/view1.html',
     controller: 'View1Ctrl'
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', ['$routeParams', function($routeParams) {
     this.server = "Pictures/";
     this.image = "3fbdef1f0ce4b5b6803c2b81328c764f-xxlarge.jpg";
     this.imageProperties = {
