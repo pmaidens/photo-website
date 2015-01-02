@@ -4,3 +4,5 @@ bower_components/
 app/Pictures/
 .sass-cache/
 app/style/css/
+*.sublime-project
+*.sublime-workspace

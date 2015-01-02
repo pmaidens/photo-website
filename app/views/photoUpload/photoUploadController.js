@@ -4,12 +4,12 @@ angular.module('myApp.upload', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/upload', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
+    templateUrl: 'views/photoUpload/photoUploadTemplate.html',
+    controller: 'PhotoUploadController'
   });
 }])
 
-.controller('View2Ctrl', ['$scope', '$http', '$timeout', '$compile', '$upload', function($scope, $http, $timeout, $compile, $upload) {
+.controller('PhotoUploadController', ['$scope', '$http', '$timeout', '$compile', '$upload', function($scope, $http, $timeout, $compile, $upload) {
     $scope.fileReaderSupported = window.FileReader != null && (window.FileAPI == null || FileAPI.html5 != false);
 
     $scope.submitPicture = function(pictureFile) {

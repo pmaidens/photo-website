@@ -4,12 +4,12 @@ angular.module('myApp.photos', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/photos/:id', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+    templateUrl: 'views/photoDisplay/photoDisplayTemplate.html',
+    controller: 'PhotoDisplayController'
   });
 }])
 
-.controller('View1Ctrl', ['$routeParams', function($routeParams) {
+.controller('PhotoDisplayController', ['$routeParams', function($routeParams) {
     this.server = "Pictures/";
     this.image = "3fbdef1f0ce4b5b6803c2b81328c764f-xxlarge.jpg";
     this.imageProperties = {

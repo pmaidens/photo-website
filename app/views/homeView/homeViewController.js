@@ -4,12 +4,12 @@ angular.module('myApp.homeView', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
-    templateUrl: 'homeView/homeView.html',
-    controller: 'homeViewCtrl'
+    templateUrl: 'views/homeView/homeViewTemplate.html',
+    controller: 'HomeViewController'
   });
 }])
 
-.controller('homeViewCtrl', ['$scope', function($scope) {
+.controller('HomeViewController', ['$scope', function($scope) {
     $scope.welcomeMessage = "Welcome to";
     $scope.companyName = "DeLane Jeffery Photography";
     $scope.uploadedPictures = [
