@@ -5,7 +5,7 @@
         <div>{{companyName}}</div>
     </div>
     <div class="body">
-        <a class="pictureContainerLink" ng-repeat="picture in uploadedPictures" ng-href="#/photos/{{picture.id}}" ng-click="updateTransferPhoto(picture)">
+        <a class="pictureContainerLink" ng-repeat="picture in uploadedPictures" ng-href="#/view" ng-click="updateTransferPhoto(picture)">
             <div class="pictureContainer">
                 <img class="homePagePicture" ng-src="{{picture.dataURL}}">
                 <h2><span class="pictureTitle">{{picture.title}}</span></h2>

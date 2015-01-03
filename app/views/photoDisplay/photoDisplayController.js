@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('myApp.photos', ['ngRoute'])
+angular.module('myApp.view', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/photos/:id', {
+  $routeProvider.when('/view', {
     templateUrl: 'views/photoDisplay/photoDisplayTemplate.html',
     controller: 'PhotoDisplayController'
   });
