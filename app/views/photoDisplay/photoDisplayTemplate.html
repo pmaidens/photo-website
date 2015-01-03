@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="style/css/photoDisplayStyle.css">
-<div class="view1" ng-controller="PhotoDisplayController as photoDisplayController">
+<div class="view1" ng-controller="PhotoDisplayController">
     <div class="largeImageContainer">
         <div class="imageWrapper">
-            <img class="large" ng-src="{{photoDisplayController.server + photoDisplayController.image}}" ng-click="photoDisplayController.showFullRes()">
+            <img class="large" ng-src="{{image}}" ng-click="showFullRes()">
         </div>
-        <h3>{{photoDisplayController.imageProperties.title}}</h3>
-        <h6>{{photoDisplayController.imageProperties.caption}}</h6>
+        <h3>{{title}}</h3>
+        <h6>{{caption}}</h6>
     </div>
-    <span class="fullResImageContainer" ng-hide="!photoDisplayController.fullResVisible" ng-click="photoDisplayController.hideFullRes()">
+    <span class="fullResImageContainer" ng-hide="!fullResVisible" ng-click="hideFullRes()">
         <div class="imageWrapper">
-            <img ng-src="{{photoDisplayController.server + photoDisplayController.image}}">
+            <img ng-src="{{image}}">
         </div>
     </span>
 </div>

@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.upload',
   'myApp.version',
   'angularFileUpload',
-  'myApp.homeView'
+  'myApp.homeView',
+  'myApp.photoTransferService'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});

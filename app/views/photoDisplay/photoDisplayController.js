@@ -9,19 +9,16 @@ angular.module('myApp.photos', ['ngRoute'])
   });
 }])
 
-.controller('PhotoDisplayController', ['$routeParams', function($routeParams) {
-    this.server = "Pictures/";
-    this.image = "3fbdef1f0ce4b5b6803c2b81328c764f-xxlarge.jpg";
-    this.imageProperties = {
-        "title": "Weston Sitting",
-        "caption": "It's a good thing we got a picture of him sitting still, because it is the only time you will ever see him like this"
+.controller('PhotoDisplayController', ['$scope', '$routeParams', 'photoTransferService', function($scope, $routeParams, photoTransferService) {
+    $scope.image = photoTransferService.dataURL;
+    $scope.title = photoTransferService.title;
+    $scope.caption = photoTransferService.caption;
+    
+    $scope.fullResVisible = false;
+    $scope.showFullRes = function showFullRes() {
+        $scope.fullResVisible = true;
     },
-    this.fullResVisible = false;
-
-    this.showFullRes = function showFullRes() {
-        this.fullResVisible = true;
-    },
-    this.hideFullRes = function showFullRes() {
-        this.fullResVisible = false;
+    $scope.hideFullRes = function showFullRes() {
+        $scope.fullResVisible = false;
     }
 }]);
