@@ -9,14 +9,21 @@ angular.module('myApp.upload', ['ngRoute'])
   });
 }])
 
-.controller('PhotoUploadController', ['$scope', '$http', '$timeout', '$compile', '$upload', function($scope, $http, $timeout, $compile, $upload) {
+.controller('PhotoUploadController', ['$scope', '$http', '$timeout', '$upload', function($scope, $http, $timeout, $upload) {
     $scope.fileReaderSupported = window.FileReader != null && (window.FileAPI == null || FileAPI.html5 != false);
 
-    $scope.submitPicture = function(pictureFile) {
-        pictureFile.title = $scope.pictureTitle;
-        pictureFile.caption = $scope.pictureCaption;
-        pictureFile.credits = $scope.pictureCredits;
-        console.log(pictureFile);
+    $scope.submitPicture = function() {
+        $http.post('/api/users/1/photos', {
+            userPhoto: $scope.userPhoto,
+            photoTitle: $scope.title,
+            photoCaption: $scope.caption
+        })
+            .success(function(data) {
+                console.log(data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + JSON.stringify(data));
+            });
     }
 
     $scope.generateThumb = function(file) {

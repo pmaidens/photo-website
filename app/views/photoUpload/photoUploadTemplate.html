@@ -1,25 +1,25 @@
 <div ng-controller="PhotoUploadController">
-    <form name="uploadPictureForm">
+    <form name="uploadPictureForm" enctype="multipart/form-data" action="/api/users/1/photos" method="post">
         <fieldset>
             <legend>Upload your own picture</legend>
             <div>
                 <label>Choose a picture: </label>
-                <input type="file" ng-file-select="" ng-model="uploadedPictures" name="file" accept="image/*" ng-file-change="generateThumb(uploadedPictures[0], $files)" required="false">
-                <img ng-show="uploadedPictures[0].dataUrl != null" ng-src="{{uploadedPictures[0].dataUrl}}" class="thumb">
+                <input type="file" ng-file-select="" ng-model="userPhoto" name="userPhoto" accept="image/*" ng-file-change="generateThumb(userPhoto[0], $files)" required="false">
+                <img ng-show="userPhoto[0].dataUrl != null" ng-src="{{userPhoto[0].dataUrl}}" class="thumb">
             </div>
             <div>
                 <label>Title: </label>
-                <input type="text" name="title" ng-model="pictureTitle" size="48" required="false" />
+                <input type="text" name="title" ng-model="photoTitle" size="48" required="false" />
             </div>
             <div>
                 <label>Caption: </label>
-                <input type="text" name="caption" ng-model="pictureCaption" size="48" required="false" />
+                <input type="text" name="caption" ng-model="photoCaption" size="48" required="false" />
             </div>
             <div>
                 <label>Credits: </label>
-                <input type="text" name="credits" ng-model="pictureCredits" size="48" required="false" />
+                <input type="text" name="credits" ng-model="photoCredits" size="48" required="false" />
             </div>
-            <button type="button" ng-click="submitPicture(uploadedPictures)">Submit</button>
+            <button ng-submit="submitPicture(uploadedPictures)">Submit</button>
         </fieldset>
     </form>
 <!-- </div> -->
