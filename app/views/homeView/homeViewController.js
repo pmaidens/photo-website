@@ -9,20 +9,21 @@ angular.module('myApp.home', ['ngRoute'])
   });
 }])
 
-.controller('HomeViewController', ['$scope', 'photoTransferService', function($scope, photoTransferService) {
+.controller('HomeViewController', ['$scope', '$http', 'photoTransferService', function($scope, $http, photoTransferService) {
+    var uploadedPhotos = [];
+    $http.get('/api/users/1/photos/54ab2429e618ba8304b0d7f0').success(function(data) {
+        var photoData = {};
+        photoData.image = "data:image/jpeg;base64, " + data.photo;
+        photoData.title = data.title;
+        photoData.id = data.id;
+        photoData.caption = data.caption;
+        uploadedPhotos.push(photoData);
+    }).error(function(data){
+        console.log("Error: " + JSON.stringify(data));
+    });
     $scope.welcomeMessage = "Welcome to";
     $scope.companyName = "DeLane Jeffery Photography";
-    $scope.uploadedPictures = [
-        {
-            title: "Lizzy and West Sitting",
-            id: "1",
-            caption: "A cute picture of Lizzy and Weston sitting in the grass"
-        },{
-            title: "Weston Large Headshot",
-            id: "2",
-            caption: "That's one big Weston!"
-        }
-    ];
+    $scope.uploadedPhotos = uploadedPhotos;
     $scope.updateTransferPhoto = function(picture) {
         photoTransferService.set(picture);
     };

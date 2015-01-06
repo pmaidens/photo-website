@@ -10,7 +10,7 @@ angular.module('myApp.view', ['ngRoute'])
 }])
 
 .controller('PhotoDisplayController', ['$scope', '$routeParams', 'photoTransferService', function($scope, $routeParams, photoTransferService) {
-    $scope.image = photoTransferService.dataURL;
+    $scope.image = photoTransferService.image;
     $scope.title = photoTransferService.title;
     $scope.caption = photoTransferService.caption;
     
