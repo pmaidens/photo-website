@@ -11,13 +11,15 @@ angular.module('myApp.home', ['ngRoute'])
 
 .controller('HomeViewController', ['$scope', '$http', 'photoTransferService', function($scope, $http, photoTransferService) {
     var uploadedPhotos = [];
-    $http.get('/api/users/1/photos/54ab2429e618ba8304b0d7f0').success(function(data) {
-        var photoData = {};
-        photoData.image = "data:image/jpeg;base64, " + data.photo;
-        photoData.title = data.title;
-        photoData.id = data.id;
-        photoData.caption = data.caption;
-        uploadedPhotos.push(photoData);
+    $http.get('/api/users/1/photos/').success(function(data) {
+        data.forEach(function(photo) {
+            var photoData = {};
+            photoData.image = "data:image/jpeg;base64, " + photo.photo;
+            photoData.title = photo.title;
+            photoData.id = photo.id;
+            photoData.caption = photo.caption;
+            uploadedPhotos.push(photoData);
+        });
     }).error(function(data){
         console.log("Error: " + JSON.stringify(data));
     });
